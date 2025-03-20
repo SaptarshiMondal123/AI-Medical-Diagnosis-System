@@ -106,12 +106,8 @@ env_path = r"C:\Users\SAPTARSHI MONDAL\PycharmProjects\HealthApp\apikey.env"
 load_dotenv(env_path)
 
 # Get API key
-api_key = os.getenv("GOOGLE_GEMINI_API_KEY")
+api_key = st.secrets["api"]["GOOGLE_GEMINI_API_KEY"]
 
-if not api_key:
-    st.error("⚠️ Google Gemini API key is missing! Check your .env file.")
-else:
-    genai.api_key = api_key
 
 # Home Page
 def load_lottie_url(url):
