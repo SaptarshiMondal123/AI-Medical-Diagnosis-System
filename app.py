@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 import matplotlib.pyplot as plt
 import datetime
 import seaborn as sns
-import calmap
 import time
 import random
 import requests
