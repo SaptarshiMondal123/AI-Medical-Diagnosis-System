@@ -1,5 +1,9 @@
 # AI Medical Diagnosis & Health Recommendation System
 
+[![Streamlit App](https://img.shields.io/badge/Built%20with-Streamlit-blue)](https://streamlit.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
+
 An AI-powered health recommendation system delivering personalized diet plans, fitness tracking, mental health support, and disease risk prediction through advanced machine learning models and AI-driven interactions. Built with Streamlit for an interactive web experience.
 
 ## ✨ Features
