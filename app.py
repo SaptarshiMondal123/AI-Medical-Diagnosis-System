@@ -17,6 +17,7 @@ from streamlit_lottie import st_lottie
 import xgboost
 
 
+
 # Set page configuration
 st.set_page_config(page_title="Health & Wellness App", page_icon="💙", layout="wide")
 
