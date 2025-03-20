@@ -1,6 +1,6 @@
 # AI Medical Diagnosis & Health Recommendation System
 
-[![Streamlit App](https://img.shields.io/badge/Built%20with-Streamlit-blue)](https://streamlit.io/)
+[![Streamlit App](https://img.shields.io/badge/Live%20App-Streamlit-green?logo=streamlit)](https://ai-medical-diagnosis-system-mxkswr4pvunztmra2wcqlq.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
 
