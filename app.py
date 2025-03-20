@@ -110,6 +110,7 @@ load_dotenv(env_path)
 api_key = st.secrets["api"]["GOOGLE_GEMINI_API_KEY"]
 
 
+
 # Home Page
 def load_lottie_url(url):
     r = requests.get(url)
@@ -555,7 +556,8 @@ elif selected == "🧠 Mental Health":
         ax.set_facecolor("white")
 
         sns.barplot(x=mood_counts.index, y=mood_counts.values, ax=ax,
-                    palette=["#FFD700", "#4682B4", "#FF4500", "#8B0000", "#32CD32"])
+                    hue=mood_counts.index, palette=["#FFD700", "#4682B4", "#FF4500", "#8B0000", "#32CD32"],
+                    legend=False)
 
         ax.set_title("Mood Frequency Over Time", fontsize=14, color="black")
         ax.set_ylabel("Count", fontsize=12, color="black")
@@ -583,8 +585,16 @@ elif selected == "🧠 Mental Health":
             mood_data = mood_data.reindex(date_range, fill_value=0)
 
             if not mood_data.empty:
-                fig, ax = plt.subplots(figsize=(10, 2))
-                calmap.yearplot(mood_data, ax=ax, cmap="viridis")
+                df_heatmap = mood_data.reset_index()
+                df_heatmap['Day'] = df_heatmap['index'].dt.day
+                df_heatmap['Month'] = df_heatmap['index'].dt.month
+                df_heatmap.rename(columns={0: 'Mood_Score'}, inplace=True)
+
+                pivot_data = df_heatmap.pivot_table(index='Month', columns='Day', values='Mood_Score', fill_value=0)
+
+                fig, ax = plt.subplots(figsize=(12, 4))
+                sns.heatmap(pivot_data, cmap="YlGnBu", linewidths=0.5, linecolor='gray')
+                plt.title('Mood Calendar Heatmap')
                 st.pyplot(fig)
             else:
                 st.warning("⚠️ No mood data available for this year.")
