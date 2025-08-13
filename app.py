@@ -102,7 +102,7 @@ with st.sidebar:
     st.markdown("📩 **Need Help?** Contact [Support](mailto:support@yourapp.com)")
 
 # Load environment variables
-env_path = r"C:\Users\SAPTARSHI MONDAL\PycharmProjects\HealthApp\apikey.env"
+env_path = r"HealthApp\apikey.env"
 load_dotenv(env_path)
 
 # Get API key
